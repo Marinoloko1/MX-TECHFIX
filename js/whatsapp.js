@@ -31,7 +31,7 @@ function enviarWhatsApp() {
     mensaje += `Por favor contáctenme para coordinar el servicio. ¡Gracias!`;
 
     // Número de WhatsApp (con código de país para México)
-    const numeroWhatsApp = '523331149948';
+    const numeroWhatsApp = '524691760358';
 
     // Crear el enlace de WhatsApp
     const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;

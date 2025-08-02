@@ -32,7 +32,7 @@ function sendTechRequest() {
     message += `Por favor contácteme para coordinar la revisión del equipo.`;
 
     // Codificar URI y abrir WhatsApp
-    const whatsappNumber = '523331149948';
+    const whatsappNumber = '524691760358';
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
 
     window.location.href = whatsappUrl;
