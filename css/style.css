@@ -50,7 +50,8 @@ body {
 
 /* Contenido principal */
 .main-content {
-  margin-top: 70px; /* Compensa el header fijo */
+  margin-top: 70px;
+  /* Compensa el header fijo */
   padding-bottom: 20px;
 }
 
@@ -81,7 +82,8 @@ body {
 
 /* Botones móviles */
 .mobile-btn {
-  min-height: 44px; /* Tamaño mínimo para tacto */
+  min-height: 44px;
+  /* Tamaño mínimo para tacto */
   padding: 12px 20px;
   font-size: 1rem;
 }
@@ -91,7 +93,7 @@ body {
   .container {
     max-width: 720px;
   }
-  
+
   .grid-tablet {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -103,13 +105,14 @@ body {
   .container {
     max-width: 960px;
   }
-  
+
   .grid-desktop {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 25px;
   }
 }
+
 :root {
   --color-principal: #f31212;
   --color-linea: #ff0000;
@@ -654,7 +657,7 @@ img {
 
 .hm-menu .hm-icon-cart a {
   font-size: 33px;
-  color: var(--color-negro);
+  color: var(--color-letras);
   position: relative;
 }
 
@@ -2699,4 +2702,77 @@ textarea {
   .contact-options {
     grid-template-columns: repeat(2, 1fr) !important;
   }
+}
+
+/* Estilos para el carrito */
+.cart-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #4CAF50;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  z-index: 1000;
+  display: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hm-icon-cart span {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilos para la página de carrito */
+.cart-container {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 20px;
+}
+
+.cart-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.cart-item {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-item img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.cart-summary {
+  margin-top: 30px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 5px;
+}
+
+.checkout-btn {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
 }

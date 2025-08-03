@@ -3,8 +3,8 @@ const productsDatabase = [
         id: 1,
         name: "Pantalla LCD iPhone 11",
         category: "pantallas",
-        price: 250.00,
-        originalPrice: 294.12,
+        price: 400.00,
+        originalPrice: 450.00,
         image: "img/Productos/pantalla11.jpg",
         description: "Pantalla original de repuesto con garantía",
         stock: 15,
@@ -15,7 +15,7 @@ const productsDatabase = [
         id: 2,
         name: "Batería Samsung Galaxy S20",
         category: "baterias",
-        price: 150.00,
+        price: 569.00,
         image: "img/Productos/BateriaS20.webp",
         description: "Batería original 4000mAh con certificación",
         stock: 8,
@@ -25,7 +25,7 @@ const productsDatabase = [
         id: 3,
         name: "Cargador Rápido 20W USB-C",
         category: "accesorios",
-        price: 80.00,
+        price: 70.00,
         image: "img/Productos/cargador20w.webp",
         description: "Carga rápida compatible con iPhone y Android",
         stock: 12,
@@ -35,7 +35,7 @@ const productsDatabase = [
         id: 4,
         name: "Funda Protectora iPhone 13",
         category: "accesorios",
-        price: 45.00,
+        price: 315.00,
         image: "img/Productos/funda.jpeg",
         description: "Funda resistente a golpes y caídas",
         stock: 20,
@@ -45,7 +45,7 @@ const productsDatabase = [
         id: 5,
         name: "Kit de Reparación Profesional",
         category: "herramientas",
-        price: 120.00,
+        price: 280.00,
         image: "img/Productos/kit.jpg",
         description: "24 piezas para reparación de dispositivos",
         stock: 5,
@@ -55,7 +55,7 @@ const productsDatabase = [
         id: 6,
         name: "Vidrio Templado Samsung S21",
         category: "accesorios",
-        price: 30.00,
+        price: 60.00,
         image: "img/Productos/vidrio.jpg",
         description: "Protección 9H contra rayaduras",
         stock: 18,
@@ -77,7 +77,7 @@ const productsDatabase = [
         id: 8,
         name: "Conector de Carga USB-C",
         category: "repuestos",
-        price: 25.00,
+        price: 98.00,
         image: "img/Productos/tipoc.jpg",
         description: "Repuesto original para puerto de carga",
         stock: 10,
@@ -186,8 +186,8 @@ function renderProducts(products) {
                         <h3>${product.name}</h3>
                         <p class="product-desc">${product.description}</p>
                         <div class="precio">
-                            ${product.isOffer ? `<span class="old-price">S/ ${product.originalPrice.toFixed(2)}</span>` : ''}
-                            <span>S/ ${product.price.toFixed(2)}</span>
+                            ${product.isOffer ? `<span class="old-price">$/ ${product.originalPrice.toFixed(2)}</span>` : ''}
+                            <span>$/ ${product.price.toFixed(2)}</span>
                         </div>
                         <div class="product-meta">
                             <span class="stock ${product.stock > 5 ? 'in-stock' : 'low-stock'}">
@@ -232,16 +232,30 @@ function renderRating(rating) {
 }
 
 // Función para agregar al carrito
-function addToCart(e) {
-    const productId = parseInt(e.target.closest('.product-item').dataset.id);
-    const product = productsDatabase.find(p => p.id === productId);
+document.addEventListener('DOMContentLoaded', function () {
+    // Selecciona todos los botones "AGREGAR AL CARRITO"
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    const cartCount = document.getElementById('cart-count');
 
-    // Aquí iría la lógica real del carrito
-    console.log('Producto agregado:', product);
+    // Inicializa el contador
+    let count = 0;
 
-    // Mostrar notificación
-    showNotification(`${product.name} agregado al carrito`);
-}
+    // Añade evento click a cada botón
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            // Incrementa el contador
+            count++;
+            // Actualiza el número en el carrito
+            cartCount.textContent = count;
+
+            // Opcional: puedes añadir una animación o feedback visual
+            this.textContent = '✓ Añadido';
+            setTimeout(() => {
+                this.textContent = 'AGREGAR AL CARRITO';
+            }, 1000);
+        });
+    });
+});
 
 // Función para mostrar notificaciones
 function showNotification(message) {

@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <div class="quick-result-item">
                         <img src="${product.image}" alt="${product.name}" width="40">
                         <span>${product.name}</span>
-                        <span class="quick-result-price">S/ ${product.price.toFixed(2)}</span>
+                        <span class="quick-result-price">$/ ${product.price.toFixed(2)}</span>
                     </div>
                 `;
                 resultItem.addEventListener('click', function (e) {
@@ -100,8 +100,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     <p class="product-desc">${product.desc}</p>
                     <div class="precio">
                         ${product.category === 'Pantallas' ?
-                `<span class="old-price">S/ ${(product.price / 0.85).toFixed(2)}</span>` : ''}
-                        <span>S/ ${product.price.toFixed(2)}</span>
+                `<span class="old-price">$/ ${(product.price / 0.85).toFixed(2)}</span>` : ''}
+                        <span>$/ ${product.price.toFixed(2)}</span>
                     </div>
                     <div class="product-actions">
                         <a href="#" class="hm-btn btn-primary uppercase">AGREGAR AL CARRITO</a>
