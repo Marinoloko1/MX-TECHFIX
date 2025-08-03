@@ -1,3 +1,115 @@
+/* Reset móvil completo - coloca esto al inicio de tu CSS */
+:root {
+  --mobile-padding: 15px;
+}
+
+/* Estilos base para móviles primero */
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  padding: 0 var(--mobile-padding);
+  margin: 0 auto;
+}
+
+/* Header móvil */
+.hm-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: var(--color-fondo);
+  padding: 10px 0;
+}
+
+.hm-logo {
+  max-width: 120px;
+}
+
+.hm-logo img {
+  width: 100%;
+  height: auto;
+}
+
+/* Menú móvil */
+.header-menu-movil {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-fondo);
+  z-index: 1100;
+  padding: 60px 20px 20px;
+  overflow-y: auto;
+}
+
+/* Contenido principal */
+.main-content {
+  margin-top: 70px; /* Compensa el header fijo */
+  padding-bottom: 20px;
+}
+
+/* Ajustes para todas las secciones */
+.section {
+  padding: 30px 0;
+}
+
+/* Grids y layouts */
+.grid-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Imágenes responsive */
+.responsive-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Textos móviles */
+.mobile-text {
+  font-size: clamp(14px, 4vw, 18px);
+  line-height: 1.4;
+}
+
+/* Botones móviles */
+.mobile-btn {
+  min-height: 44px; /* Tamaño mínimo para tacto */
+  padding: 12px 20px;
+  font-size: 1rem;
+}
+
+/* Media queries para tablets y desktop */
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+  
+  .grid-tablet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 960px;
+  }
+  
+  .grid-desktop {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+  }
+}
 :root {
   --color-principal: #f31212;
   --color-linea: #ff0000;
