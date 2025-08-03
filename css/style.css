@@ -2455,3 +2455,136 @@ textarea {
     grid-template-columns: 1fr;
   }
 }
+
+/* Añade esto al final de tu archivo style.css */
+
+/* Reset para móviles */
+@media (max-width: 767px) {
+
+  /* Ajustes generales */
+  body {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .container {
+    width: 100% !important;
+    padding: 0 15px !important;
+  }
+
+  /* Header */
+  .hm-header {
+    padding: 10px 0;
+  }
+
+  .hm-logo {
+    width: 120px !important;
+  }
+
+  .hm-logo img {
+    width: 100%;
+    height: auto;
+  }
+
+  .hm-menu ul {
+    display: none !important;
+  }
+
+  .icon-menu {
+    display: block !important;
+  }
+
+  /* Hero/Slider */
+  .slider-box {
+    height: 200px !important;
+    min-height: 200px !important;
+  }
+
+  /* Secciones de contenido */
+  .hm-page-block {
+    padding: 30px 0 !important;
+  }
+
+  .header-title h1 {
+    font-size: 1.8rem !important;
+    padding: 0 10px;
+  }
+
+  .header-title h3 {
+    font-size: 1.1rem !important;
+    padding: 0 10px;
+  }
+
+  /* Grids */
+  .hm-grid-category,
+  .grid-product,
+  .quick-services,
+  .reasons-grid,
+  .contact-options {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+    padding: 0 10px;
+  }
+
+  .grid-item,
+  .product-item,
+  .quick-service,
+  .reason-item,
+  .contact-option {
+    width: 100% !important;
+    margin-bottom: 15px;
+  }
+
+  /* Footer */
+  footer .foo-row {
+    flex-direction: column;
+  }
+
+  footer .foo-col {
+    width: 100% !important;
+    margin: 0 0 30px 0 !important;
+  }
+
+  /* Menú móvil */
+  .header-menu-movil {
+    padding: 20px;
+  }
+
+  /* Ajustes específicos para texto */
+  p,
+  li {
+    font-size: 0.9rem !important;
+  }
+
+  /* Botones */
+  .hm-btn,
+  .btn-primary,
+  .btn-whatsapp {
+    padding: 10px 15px !important;
+    font-size: 0.9rem !important;
+  }
+
+  /* WhatsApp flotante */
+  .whatsapp-float {
+    width: 50px !important;
+    height: 50px !important;
+    bottom: 15px !important;
+    right: 15px !important;
+    font-size: 24px !important;
+  }
+}
+
+/* Ajustes para tablets (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  .hm-grid-category,
+  .grid-product {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .quick-services,
+  .reasons-grid,
+  .contact-options {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
